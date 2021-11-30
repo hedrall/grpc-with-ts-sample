@@ -1,16 +1,15 @@
 {
-  "name": "grpc-web",
+  "name": "grpc-with-ts-sample_case-when-grpc_web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "repository": "https://github.com/hedrall/grpc-with-ts-sample",
+  "author": "hedrall",
+  "license": "ISC",
   "scripts": {
     "gen": "make gen",
     "build": "make build",
     "start:proxy": "envoy -c envoy.yaml"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "dayjs": "^1.10.7",
     "google-protobuf": "^3.19.1",
