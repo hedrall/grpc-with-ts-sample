@@ -3,7 +3,7 @@ NPM_BIN=$(shell npm bin)
 OUT_DIR="./gen"
 
 # Path to tools
-GRPC_TOOL=$(NPM_BIN)/grpc_tools_node_protoc
+NODE_PROTOC=$(NPM_BIN)/grpc_tools_node_protoc
 
 .PHONY: build
 build:
@@ -15,7 +15,7 @@ build:
 .PHONY: gen
 gen:
 	rm -rf $(OUT_DIR) && mkdir -p $(OUT_DIR)
-	$(GRPC_TOOL) \
+	$(NODE_PROTOC) \
 	--js_out=import_style=commonjs:$(OUT_DIR) \
 	--grpc-web_out=import_style=typescript,mode=grpcwebtext:$(OUT_DIR) \
 	-I ../ \
