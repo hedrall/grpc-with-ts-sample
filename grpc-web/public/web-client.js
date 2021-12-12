@@ -16725,10 +16725,18 @@
   // web-client.ts
   var import_shop_pb = __toModule(require_shop_pb());
   var import_shop_pb2 = __toModule(require_shop_pb2());
-  var dayjs = require_dayjs_min();
-  var createClient = () => {
-    return new ShopServiceClient("http://localhost:8081");
+
+  // ../common/settings.ts
+  var SERVER = {
+    PORT: "9000",
+    HOST: "localhost",
+    ADDRESS: () => `${SERVER.HOST}:${SERVER.PORT}`,
+    PROXY_URL: "http://localhost:8081"
   };
+
+  // web-client.ts
+  var dayjs = require_dayjs_min();
+  var createClient = () => new ShopServiceClient(SERVER.PROXY_URL);
   var createOrderRequest = async (client) => {
     const request = new import_shop_pb.CreateOrderRequest();
     request.setProductId("dummy-product-id");

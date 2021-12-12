@@ -1,3 +1,4 @@
 node_modules
 bundle
 public/web-client.js
+rich-sample/server-image-store

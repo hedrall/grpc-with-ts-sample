@@ -16,5 +16,5 @@ gen:
 	--js_out="import_style=commonjs,binary:$(OUT_DIR)" \
 	--grpc_out="grpc_js:$(OUT_DIR)" \
 	--ts_out="service=grpc-node,mode=grpc-js:$(OUT_DIR)" \
-	-I ../ \
-	../proto/*.proto
+	-I ./ \
+	./shop-with-stream.proto
